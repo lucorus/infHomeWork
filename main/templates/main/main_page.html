@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Профессии в IT-сфере</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #e0e0e0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            width: 100%;
+        }
+        header h1 {
+            font-size: 2.5em;
+            margin: 0;
+            color: #77aaff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .professions-container {
+            width: 90%;
+            max-width: 1200px;
+            overflow-x: auto;
+            margin: 20px 0;
+            padding: 20px 0;
+            border-top: 2px solid #77aaff;
+            border-bottom: 2px solid #77aaff;
+        }
+        .professions {
+            display: flex;
+            gap: 20px;
+            padding: 20px 0;
+        }
+        .profession {
+            min-width: 300px;
+            background: #1e1e1e;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .profession:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+        }
+        .profession-header {
+            background: #77aaff;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            font-size: 1.2em;
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+        .profession-content {
+            padding: 20px;
+        }
+        .subcategory {
+            margin-top: 10px;
+            padding-left: 15px;
+            border-left: 2px solid #77aaff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Профессии в IT-сфере</h1>
+    </header>
+
+    <div class="professions-container">
+        <div class="professions">
+            <div class="profession">
+                <div class="profession-header">Backend-разработчик</div>
+                <div class="profession-content">
+                    <p>Занимается созданием вычислительной части приложения, интеграцией сторонних сервисов и обменом данными между микросервисами (если таковые имеются)</p>
+                </div>
+            </div>
+
+            <div class="profession">
+                <div class="profession-header">Frontend-разработчик</div>
+                <div class="profession-content">
+                    <p>Cоздаёт интерфейс приложения, а так же иллюстрирует данные, которые пришли с backend'а, в красивом виде</p>
+                </div>
+            </div>
+
+            <div class="profession">
+                <div class="profession-header">DevOps-инженер</div>
+                <div class="profession-content">
+                    <p>Занимается развёртыванием сайта на хостинге, автоматизацией конфигурации (пишет docker/docker-compose файлы), управляет версиями</p>
+                </div>
+            </div>
+
+            <div class="profession">
+                <div class="profession-header">Дизайнер</div>
+                <div class="profession-content">
+                    <p>Создаёт картинку красивого и удобного интерфейса</p>
+                    <div class="subcategory">
+                        <h3>UX Дизайнер</h3>
+                        <p>работают над удобством использования интерфейса</p>
+                    </div>
+                    <div class="subcategory">
+                        <h3>UI Дизайнер</h3>
+                        <p>работают над визуальной составляющей интерфейса</p>
+                    </div>
+                    <div class="subcategory">
+                        <h3>Графический дизайнер</h3>
+                        <p>Создают графические элементы, такие как логотипы, иконки и иллюстрации.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="profession">
+                <div class="profession-header">Тестировщик (QA-инженер)</div>
+                <div class="profession-content">
+                    <p>Проверяет работоспособность приложения в различных случаях (получении неожиданных данных или высокой нагрузке)</p>
+                </div>
+            </div>
+
+            <div class="profession">
+                <div class="profession-header">Проект-менеджер</div>
+                <div class="profession-content">
+                    <p>Проект-менеджеры координируют работу команды разработчиков, следят за сроками и бюджетом проекта, общаются с заказчиком</p>
+                </div>
+            </div>
+
+            <div class="profession">
+                <div class="profession-header">Системный администратор</div>
+                <div class="profession-content">
+                    <p>Управляют и поддерживают серверы, обеспечивают безопасность данных и решают технические проблемы</p>
+                </div>
+            </div>
+
+            <div class="profession">
+                <div class="profession-header">SEO-специалист</div>
+                <div class="profession-content">
+                    <p>Делают веб-сайты более "заметными" для поисковых систем, чтобы улучшить их видимость у пользователей и привлечь больше трафика</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
