@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://ibb.co/xSbF4KhV"> <!-- Добавьте эту строку -->
     <title>Профессии в IT-сфере</title>
-    <style>
+        <style>
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -49,6 +50,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
             overflow: hidden;
             transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
         }
         .profession:hover {
             transform: scale(1.05);
@@ -62,6 +64,7 @@
             font-size: 1.2em;
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
+            cursor: pointer;
         }
         .profession-content {
             padding: 20px;
@@ -71,83 +74,361 @@
             padding-left: 15px;
             border-left: 2px solid #77aaff;
         }
+        .technologies {
+            margin-top: 10px;
+            padding-left: 15px;
+            border-left: 2px solid #77aaff;
+        }
+        .technology {
+            display: block;
+            margin: 5px 0;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        .modal-content {
+            background-color: #1e1e1e;
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+        .close {
+            color: #77aaff;
+            float: right;
+            font-size: 1.5em;
+            cursor: pointer;
+        }
+        .modal h2 {
+            color: #77aaff;
+            border-bottom: 2px solid #77aaff;
+            padding-bottom: 10px;
+        }
+        .modal p {
+            margin: 15px 0;
+            line-height: 1.6;
+        }
+        .modal ul {
+            margin-left: 20px;
+            list-style-type: disc;
+        }
+        .modal ul li {
+            margin: 10px 0;
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Профессии в IT-сфере</h1>
-    </header>
+<header>
+    <h1>Профессии в IT-сфере</h1>
+</header>
 
-    <div class="professions-container">
-        <div class="professions">
-            <div class="profession">
-                <div class="profession-header">Backend-разработчик</div>
-                <div class="profession-content">
-                    <p>Занимается созданием вычислительной части приложения, интеграцией сторонних сервисов и обменом данными между микросервисами (если таковые имеются)</p>
+<div class="professions-container">
+    <div class="professions">
+        <div class="profession" id="backend-profession">
+            <div class="profession-header">
+                Backend-разработчик
+            </div>
+            <div class="profession-content">
+                <p>Занимается созданием вычислительной части приложения, интеграцией сторонних сервисов и обменом
+                    данными между микросервисами (если таковые имеются)</p>
+                <div class="technologies">
+                    <h3>Технологии:</h3>
+                    <span class="technology">какой-то яп (go, js, java, python)</span>
+                    <span class="technology">фреймворк (gin, next.js, spring)</span>
+                    <span class="technology" title="Язык для взаимодействия с бд">sql</span>
                 </div>
             </div>
+        </div>
 
-            <div class="profession">
-                <div class="profession-header">Frontend-разработчик</div>
-                <div class="profession-content">
-                    <p>Cоздаёт интерфейс приложения, а так же иллюстрирует данные, которые пришли с backend'а, в красивом виде</p>
+
+        <div class="profession">
+            <div class="profession-header">Frontend-разработчик</div>
+            <div class="profession-content">
+                <p>Cоздаёт интерфейс приложения, а так же иллюстрирует данные, которые пришли с backend'а, в красивом
+                    виде</p>
+                <div class="technologies">
+                    <h3>Технологии:</h3>
+                    <span class="technology" title="Язык разметки для создания веб-страниц">HTML</span>
+                    <span class="technology" title="Язык стилей для оформления веб-страниц">CSS</span>
+                    <span class="technology" title="Язык программирования для веб-разработки">JS</span>
+                    <span class="technology" title="Библиотека для создания пользовательских интерфейсов">React</span>
+                    <span class="technology" title="Фреймворк для создания приложений">Angular / Vue.js</span>
                 </div>
             </div>
+        </div>
 
-            <div class="profession">
-                <div class="profession-header">DevOps-инженер</div>
-                <div class="profession-content">
-                    <p>Занимается развёртыванием сайта на хостинге, автоматизацией конфигурации (пишет docker/docker-compose файлы), управляет версиями</p>
+        <div class="profession">
+            <div class="profession-header">DevOps-инженер</div>
+            <div class="profession-content">
+                <p>Занимается развёртыванием сайта на хостинге, автоматизацией конфигурации (пишет docker/docker-compose
+                    файлы), управляет версиями</p>
+                <div class="technologies">
+                    <h3>Технологии:</h3>
+                    <span class="technology" title="Инструмент для контейнеризации приложений">Docker</span>
+                    <span class="technology" title="Система перераспределении нагрузки">Kubernetes</span>
+                    <span class="technology" title="Инструмент для автоматизации конфигурации">Ansible</span>
                 </div>
             </div>
+        </div>
 
-            <div class="profession">
-                <div class="profession-header">Дизайнер</div>
-                <div class="profession-content">
-                    <p>Создаёт картинку красивого и удобного интерфейса</p>
-                    <div class="subcategory">
-                        <h3>UX Дизайнер</h3>
-                        <p>работают над удобством использования интерфейса</p>
-                    </div>
-                    <div class="subcategory">
-                        <h3>UI Дизайнер</h3>
-                        <p>работают над визуальной составляющей интерфейса</p>
-                    </div>
-                    <div class="subcategory">
-                        <h3>Графический дизайнер</h3>
-                        <p>Создают графические элементы, такие как логотипы, иконки и иллюстрации.</p>
-                    </div>
+        <div class="profession">
+            <div class="profession-header">Дизайнер</div>
+            <div class="profession-content">
+                <p>Создаёт картинку красивого и удобного интерфейса</p>
+                <div class="subcategory">
+                    <h3>UX Дизайнер</h3>
+                    <p>работают над удобством использования интерфейса</p>
+                </div>
+                <div class="subcategory">
+                    <h3>UI Дизайнер</h3>
+                    <p>работают над визуальной составляющей интерфейса</p>
+                </div>
+                <div class="subcategory">
+                    <h3>Графический дизайнер</h3>
+                    <p>Создают графические элементы, такие как логотипы, иконки и иллюстрации.</p>
+                </div>
+                <div class="technologies">
+                    <h3>Технологии:</h3>
+                    <span class="technology" title="Программное обеспечение для редактирования растровой графики">Adobe Photoshop</span>
+                    <span class="technology" title="Инструмент для дизайна пользовательских интерфейсов">Sketch</span>
+                    <span class="technology" title="Инструмент для коллаборативного дизайна">Figma</span>
                 </div>
             </div>
+        </div>
 
-            <div class="profession">
-                <div class="profession-header">Тестировщик (QA-инженер)</div>
-                <div class="profession-content">
-                    <p>Проверяет работоспособность приложения в различных случаях (получении неожиданных данных или высокой нагрузке)</p>
+        <div class="profession">
+            <div class="profession-header">Тестировщик (QA-инженер)</div>
+            <div class="profession-content">
+                <p>Проверяет работоспособность приложения в различных случаях (получении неожиданных данных или высокой
+                    нагрузке)</p>
+                <div class="technologies">
+                    <h3>Технологии:</h3>
+                    <span class="technology"
+                          title="Инструмент для автоматизации тестирования веб-приложений">Selenium</span>
+                    <span class="technology" title="Фреймворк для модульного тестирования">Unit тесты</span>
+                    <span class="technology" title="Инструмент для ручного тестирования api">Postman</span>
                 </div>
             </div>
+        </div>
 
-            <div class="profession">
-                <div class="profession-header">Проект-менеджер</div>
-                <div class="profession-content">
-                    <p>Проект-менеджеры координируют работу команды разработчиков, следят за сроками и бюджетом проекта, общаются с заказчиком</p>
+        <div class="profession">
+            <div class="profession-header">Проект-менеджер</div>
+            <div class="profession-content">
+                <p>Проект-менеджеры координируют работу команды разработчиков, следят за сроками и бюджетом проекта,
+                    общаются с заказчиком</p>
+                <div class="technologies">
+                    <h3>Технологии:</h3>
+                    <span class="technology" title="Система управления проектами">JIRA</span>
+                    <span class="technology" title="Инструмент для управления задачами">Trello</span>
+                    <span class="technology" title="Инструмент для управления проектами">Asana</span>
+                    <span class="technology"
+                          title="Программное обеспечение для управления проектами">Microsoft Project</span>
                 </div>
             </div>
+        </div>
 
-            <div class="profession">
-                <div class="profession-header">Системный администратор</div>
-                <div class="profession-content">
-                    <p>Управляют и поддерживают серверы, обеспечивают безопасность данных и решают технические проблемы</p>
+        <div class="profession">
+            <div class="profession-header">Системный администратор</div>
+            <div class="profession-content">
+                <p>Управляют и поддерживают серверы, обеспечивают безопасность данных и решают технические проблемы</p>
+                <div class="technologies">
+                    <h3>Технологии:</h3>
+                    <span class="technology" title="Операционная система для серверов">Linux / Windows Server</span>
+                    <span class="technology" title="Настройка и управление сетями">Networking</span>
+                    <span class="technology"
+                          title="Протоколы и методы обеспечения безопасности">Security Protocols</span>
                 </div>
             </div>
+        </div>
 
-            <div class="profession">
-                <div class="profession-header">SEO-специалист</div>
-                <div class="profession-content">
-                    <p>Делают веб-сайты более "заметными" для поисковых систем, чтобы улучшить их видимость у пользователей и привлечь больше трафика</p>
+        <div class="profession">
+            <div class="profession-header">SEO-специалист</div>
+            <div class="profession-content">
+                <p>Делают веб-сайты более "заметными" для поисковых систем, чтобы улучшить их видимость у
+                    пользователей и привлечь больше трафика</p>
+                <div class="technologies">
+                    <h3>Технологии:</h3>
+                    <span class="technology" title="Инструмент веб-аналитики от Google">Google Analytics</span>
+                    <span class="technology"
+                          title="Инструмент для SEO-анализа и исследования ключевых слов">SEMrush</span>
+                    <span class="technology" title="Инструмент для анализа ссылок и SEO">Ahrefs</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="profession">
+            <div class="profession-header">Team Leader</div>
+            <div class="profession-content">
+                <p>Руководит командой разработчиков, распределяет задачи, следит за качеством кода и продумывает архитектуру</p>
+                <div class="technologies">
+                    <h3>Технологии:</h3>
+                    <span class="technology" title="Методология управления проектами">Agile</span>
+                    <span class="technology" title="Фреймворк для управления проектами">Scrum</span>
+                    <span class="technology" title="Система управления проектами и отслеживания задач">JIRA / битрикс</span>
+                    <span class="technology" title="Система контроля версий">Git</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="profession">
+            <div class="profession-header">Разработчик игр</div>
+            <div class="profession-content">
+                <p>Разрабатывает игры для различных платформ</p>
+                <div class="technologies">
+                    <h3>Технологии:</h3>
+                    <span class="technology" title="Игровой движок">Unity / Unreal Engine</span>
+                    <span class="technology" title="Язык программирования, широко используемый в разработке игр">C# / C++</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="profession">
+            <div class="profession-header">Мобильный разработчик</div>
+            <div class="profession-content">
+                <p>Создаёт приложения для мобильных устройств</p>
+                <div class="technologies">
+                    <h3>Технологии:</h3>
+                    <span class="technology"
+                          title="Язык программирования для разработки приложений под iOS">Swift</span>
+                    <span class="technology"
+                          title="Язык программирования для разработки приложений под Android">Kotlin</span>
+                    <span class="technology"
+                          title="Фреймворк для кроссплатформенной мобильной разработки с использованием JavaScript">React Native</span>
+                    <span class="technology"
+                          title="Фреймворк для создания нативных мобильных приложений с использованием Dart">Flutter</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="profession">
+            <div class="profession-header">it-архитектор</div>
+            <div class="profession-content">
+                <p>Проектирует архитектуру баз данных, разделение проекта на микросервисы и архитектуру каждого микросервиса</p>
+                <div class="technologies">
+                    <h3>Технологии:</h3>
+                    <span class="technology"
+                          title="Язык запросов для управления и манипуляции реляционными базами данных">SQL</span>
+                    <span class="technology"
+                          title="Класс баз данных, использующих нетабличные структуры для хранения данных">NoSQL</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="profession">
+            <div class="profession-header">Спец. по кибербезопасности</div>
+            <div class="profession-content">
+                <p>Защищает информационные системы от кибератак, разрабатывает меры безопасности</p>
+                <div class="technologies">
+                    <h3>Технологии:</h3>
+                    <span class="technology" title="Сетевые устройства для контроля входящего и исходящего трафика">Firewalls</span>
+                    <span class="technology"
+                          title="Системы для обнаружения и предотвращения несанкционированного доступа">Intrusion Detection Systems</span>
+                    <span class="technology"
+                          title="Методы защиты данных от несанкционированного доступа">Encryption</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="profession">
+            <div class="profession-header">Data Scientist</div>
+            <div class="profession-content">
+                <p>Анализирует большие объёмы данных и прогнозирует тренды</p>
+                <div class="technologies">
+                    <h3>Технологии:</h3>
+                    <span class="technology"
+                          title="Язык программирования, широко используемый в анализе данных и машинном обучении">Python</span>
+                    <span class="technology" title="Библиотека для разработки и обучения моделей машинного обучения">TensorFlow</span>
+                    <span class="technology"
+                          title="Библиотека для анализа данных и работы с данными в Python">Pandas</span>
                 </div>
             </div>
         </div>
     </div>
+</div>
+
+
+
+<!-- Modal Structure -->
+<div id="backendModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Backend-разработчик</h2>
+        <p>Backend-разработчик занимается созданием и поддержкой серверной части веб-приложений, обеспечивая их стабильную и эффективную работу.
+            Он разрабатывает серверные скрипты и API, зачастую используя языки программирования, такие как
+            <span title="В основном используется в стартапах"><b>Python</b></span>,
+            <span title="В основном используется в приложениях банков"><b>Java</b></span>,
+            <span title="В основном используется в старых приложениях разных секторов"><b>Ruby/PHP</b></span>,
+            <span title="В основном используется в больших проектах с огромной нагрузкой"><b>Go</b></span> или
+            <span title="В основном используется в стартапах"><b>Node.js</b></span>.
+
+        </p>
+        <div class="technologies">
+            <h3>Основные задачи:</h3>
+            <span class="technology"><b>Разработка API</b>: Создание интерфейсов программирования приложений, которые позволяют взаимодействовать
+                клиентской и серверной частям.
+            </span>
+            <span class="technology"><b>Работа с базами данных</b>: Проектирование и управление базами данных, такими как MySQL, PostgreSQL или
+                MongoDB, для хранения и обработки данных.
+            </span>
+            <span class="technology"><b>Обеспечение безопасности</b>: Реализация мер по защите данных и предотвращению уязвимостей, таких как
+                <span title="Встраивание sql операций в информацию о пользователе"><b>SQL-инъекции</b></span> и
+                <span title="Множественные запросы на сервер"><b>DDoS-атаки</b></span>.
+            </span>
+            <span class="technology"><b>Оптимизация производительности</b>: Настройка серверов и баз данных для повышения скорости и эффективности
+                работы приложения.
+            </span>
+            <span class="technology"><b>Интеграция с внешними сервисами</b>: Подключение сторонних API и сервисов для расширения функциональности
+                приложения.
+            </span>
+        </div>
+
+        <div class="technologies">
+            <h3>Актуальность:</h3>
+                <span>Профессия backend разработчика сейчас очень востребована, потому что многим компаниям нужно какое-то приложение, с помощью которого
+                они смогут сделать работу сотрудников более удобной или упростить взаимодействие с потребителем. А чтобы разработать это приложения, конечно же, нужен backend'ер
+                </span>
+        </div>
+
+
+        <div class="technologies">
+            <h3>Зарплата:</h3>
+            <span class="technology"><b>Junior</b>: +-60 тыс. руб</span>
+            <span class="technology"><b>Middle</b>: +-100 тыс. руб</span>
+            <span class="technology"><b>Senior</b>: 300+ тыс. руб</span>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const backendProfession = document.getElementById('backend-profession');
+        const modal = document.getElementById('backendModal');
+        const closeBtn = modal.querySelector('.close');
+
+        backendProfession.addEventListener('click', function() {
+            modal.style.display = 'block';
+        });
+
+        closeBtn.addEventListener('click', function() {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', function(event) {
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        });
+    });
+</script>
 </body>
 </html>
